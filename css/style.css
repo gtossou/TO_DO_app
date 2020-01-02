@@ -1,11 +1,12 @@
 label {
 	padding: 10px;
 }
-img {
+.dropImg {
 	width: 30px;
 	height: 30px;
+	padding-left: 15px;
 }
 
 .savedTaskValue {
-	font-size: 30px;
+	font-size: 40px;
 }
