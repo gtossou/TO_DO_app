@@ -1,3 +1,7 @@
+//check strings not empty including spaces
+
+let counter = 0;
+
 const createNewTaskDiv = function(){
     const newTaskDiv = document.createElement("div");
     newTaskDiv.classList.add("newTaskDiv");
@@ -31,22 +35,59 @@ const createNewTaskDiv = function(){
 
 createNewTaskDiv();
 
-const handleEnterEvent = function(event){
+
+
+const handleTaskCreation = function(event){
 
     if (event.key === "Enter"){
-        // use stoppropagation ?
-        if (event.target.id === "taskInputId1" && event.target.value && event.target.value != ""){
-            localStorage.setItem("taskName",event.target.value)
-        } 
-    }
-    console.log(localStorage.getItem("taskName"))
+        newTaskDiv = document.querySelector(".newTaskDiv");
+        console.log(newTaskDiv);
+        taskValue = document.querySelector("#taskInputId1").value;
+        scheduleValue = document.querySelector("#tscheduleInputId1").value;
+
+        if (taskValue != ""){
+            localStorage.setItem("taskName",{"taskValue" : taskValue,"scheduleValue" : scheduleValue});
+        }
+        console.log(taskValue);
+    
+        function create(taskV,scheV) {
+            counter =+ 1;
+            const savedTaskDiv = document.createElement("div");
+            savedTaskDiv.classList.add("savedTaskDiv");
+            savedTaskDiv.id = `savedTaskDiv${(counter)}`;
+            newTaskDiv.insertAdjacentElement("beforebegin",savedTaskDiv) 
+            const savedTaskParagraph = document.createElement("p");
+            savedTaskParagraph.id = `savedTaskValue${(counter)}`;
+            savedTaskParagraph.classList.add("savedTaskValue");
+        
+            if (scheV != ""){
+                savedTaskParagraph.textContent = `${taskV} At ${scheV}`;
+            }
+            else{
+                savedTaskParagraph.textContent = taskV;
+            }
+
+            savedTaskDiv.appendChild(savedTaskParagraph);
+            dropImg = document.createElement("img");
+            dropImg.classList.add("dropImg"); 
+            dropImg.src = "./img/drop.jpeg";
+            savedTaskParagraph.appendChild(dropImg);
+            console.log(counter);
+           
+        }
+        return create (taskValue,scheduleValue);
+        
+    };
+       
+    //showTaskSaved(taskValue,scheduleValue);
 }
 
 const addEnterEventListener = function(){
     enterInputs = document.querySelectorAll(".enterInput");
     enterInputs.forEach(function(element) {
-        element.addEventListener("keypress",handleEnterEvent)
+        element.addEventListener("keypress",handleTaskCreation)
     });
 }
 
 addEnterEventListener();
+
