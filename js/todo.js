@@ -181,4 +181,3 @@ const showDataFromStorage = function(){
     return items.forEach(element => showTask(element.taskValue,element.scheduleValue,element.identifier)) ;
 }
 showDataFromStorage();
-localStorage.clear();
