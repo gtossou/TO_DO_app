@@ -10,3 +10,20 @@ label {
 .savedTaskValue {
 	font-size: 40px;
 }
+
+.linethrough {
+	text-decoration: line-through;
+	background-color: greenyellow;
+}
+
+body {
+	background-image: url("../img/10.jpg");
+	height: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+h2,
+input {
+	text-align: center;
+}
