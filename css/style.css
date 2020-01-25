@@ -1,13 +1,13 @@
 label {
 	padding: 10px;
 }
-.dropImg {
+.drop-img {
 	width: 30px;
 	height: 30px;
 	padding-left: 15px;
 }
 
-.savedTaskValue {
+.saved-task-value {
 	font-size: 40px;
 }
 
