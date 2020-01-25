@@ -15,4 +15,4 @@ I learned a lot during the development of the app. Some of the concepts i used a
 
 ### Author
 
-**_Gilchrist TOSSOU_** - Full stack web developer/ data engineer [LinkedIn](linkedin.com/in/gilchrist-tossou-a9663743/)
+**_Gilchrist TOSSOU_** - Full stack web developer/ data engineer [LinkedIn](https://linkedin.com/in/gilchrist-tossou-a9663743/)
